@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- 手机端使用 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0, minimal-ui"/>
+  <title>fullpage</title>
+  <link rel="stylesheet" href="c/base.css" media="all"/>
+  <link rel="stylesheet" href="c/index.css" media="all"/>
+  <link rel="stylesheet" href="../fullpage/fullpage.min.css" media="all"/>
+  <script src="../fullpage/fullpage.min.js"></script>
+</head>
+
+<body>
+  <!-- 给需要滚动页面们的父元素容器添加section-wrap类 -->
+  <div class="section-wrap" id="section-wrap">
+
+    <section class="section section-one">
+      <h3>第一屏</h3>
+      <a href="javascript:;" class="tv-next-btn js-nextBtn"><img src="i/common-next.png" alt=""></a>
+    </section>
+
+    <section class="section section-two">
+      <h3>第二屏</h3>
+      <!-- 给需要滚动页面们的父元素容器添加section-wrap类 -->
+      <div class="section-wrap" id="chapter-wrap">
+        <div class="chapter chapter-one">2-1</div>
+        <div class="chapter chapter-two">2-2</div>
+        <div class="chapter chapter-three">2-3</div>
+      </div>
+      <a href="javascript:;" class="tv-next-btn js-nextBtn"><img src="i/common-next.png" alt=""></a>
+    </section>
+
+    <section class="section section-three">
+       <h3>第三屏</h3>
+    </section>
+
+  </div>
+
+  <script>
+      // fullpage初始化
+      fp1 = new fullpage({
+        'id': '#section-wrap'               // * 必填  页面的容器id
+      , 'direction': 'Y'                    // * 必填  滚动的方向
+      , 'startpage': 1                      // 选填 起始的页面，默认值为0
+      , 'callback': function(index){        // 选填 页面滑动结束后的回调函数
+          console.log('当前页面：'+ index);
+          console.log(fp1.index());
+        }
+      });
+      fp1.start(); // 开始执行初始页面的效果
+
+      // 第二页 横向
+      fp2 = new fullpage({
+        'id': '#chapter-wrap'
+      , 'direction': 'X'
+      , 'callback': function(index){
+        }
+      });
+      fp2.start(); // 开始执行初始页面的效果
+
+
+      // 下一页按钮
+      $btnNext = document.querySelectorAll('.js-nextBtn')
+      for(var i = 0; i < $btnNext.length; i++){
+        $btnNext[i].addEventListener('click' , function(e){
+          fp1.next();
+        }, false);
+      }
+  </script>
+</body>
+</html>
