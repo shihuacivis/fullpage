@@ -20,8 +20,10 @@ feature compared with other's fullpage:
 ## Usage
 
 必需文件：
-- fullpage.js
-- fullpage.css
+nessary files:
+- fullpage.js or fullpage.min.js
+- fullpage.css or fullpage.min.css
+
 
 
 css样式
@@ -45,23 +47,12 @@ css样式
 html结构：
 
 ``` html
-
+	<!-- .section-wrap 是父容器的默认类，请勿去掉 -->
+	<!-- DON'T REMOVE '.section-wrap'. It's the default container of plugin -->
 	<div class="section-wrap" id="section-wrap">
-
-	    <section class="section section-one">
-	    </section>
-
-	</div>
-
-```
-
-``` html
-
-	<div class="section-wrap" id="section-wrap">
-
-	    <section class="section section-one">
-	    </section>
-
+		<!-- .section是每一页的默认容器类，请勿去掉 -->
+		<!-- DON'T REMOVE '.section-wrap'. It's the default container of every page. You can use some other Class for running animation / transfrom-transition, such as '.section-one' using in here. -->
+	    <section class="section section-one"></section>
 	</div>
 
 ```
