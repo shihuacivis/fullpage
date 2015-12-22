@@ -13,29 +13,25 @@ body {
   height: 100%; /*！！！必须！！！   撑大容器*/
   color: #fff;
 }
-
 h3{
   text-align: center;
+  opacity: 0;
 }
-
 /* 当页面滚动完毕后，会给当前页添加一个active类，以下以每页的标题的抖动动画为示范 */
 .active h3{
-  -webkit-animation: shake .6s;
-          animation: shake .6s;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
-
 .section-one{
   background: rgb(197, 31, 31);
 }
-
 .section-two{
   background: rgb(248, 147, 29);
 }
-
 .section-three{
   background: rgb(6, 128, 67);
 }
-
 .chapter {
   width: 100%;
   height: 100%;
@@ -43,19 +39,6 @@ h3{
   left: 0;
   top: 0;
 }
-/*.chapter-one{
-  background: rgb(179, 214, 110);
-}
-
-.chapter-two{
-  background: rgb(6, 128, 67);
-}
-
-.chapter-three{
-  background: rgb(39, 72, 98);
-}*/
-
-/*common:tv-next-btn*/
 .tv-next-btn {
   position: absolute;
   bottom: 10px;
@@ -63,110 +46,9 @@ h3{
   z-index: 20;
   width: 16px;
   margin-left: -8px;
-  -webkit-animation: NextBtn 1.5s linear infinite;
-          animation: NextBtn 1.5s linear infinite;
-
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .tv-next-btn img {
   width: 26px;
   height: 15px;
-}
-@-webkit-keyframes NextBtn {
-  0% {
-    -webkit-transform: translateY(0);
-  }
-  12% {
-    -webkit-transform: translateY(10px);
-  }
-  24% {
-    -webkit-transform: translateY(5px);
-  }
-  36% {
-    -webkit-transform: translateY(10px);
-  }
-  48% {
-    -webkit-transform: translateY(6px);
-  }
-  60% {
-    -webkit-transform: translateY(10px);
-  }
-  72% {
-    -webkit-transform: translateY(5px);
-  }
-  84% {
-    -webkit-transform: translateY(10px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-  }
-}
-@keyframes NextBtn {
-  0% {
-    transform: translateY(0);
-  }
-  12% {
-    transform: translateY(20px);
-  }
-  24% {
-    transform: translateY(10px);
-  }
-  36% {
-    transform: translateY(20px);
-  }
-  48% {
-    transform: translateY(12px);
-  }
-  60% {
-    transform: translateY(20px);
-  }
-  72% {
-    transform: translateY(15px);
-  }
-  84% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@-webkit-keyframes shake {
-  0% {
-    margin-left: -5px;
-  }
-  20% {
-    margin-left: 5px;
-  }
-  40% {
-    margin-left: -9px;
-  }
-  60% {
-    margin-left: 9px;
-  }
-  80% {
-    margin-left: -5px;
-  }
-  100% {
-    margin-left: 0px;
-  }
-}
-@keyframes shake {
-  0% {
-    margin-left: -5px;
-  }
-  20% {
-    margin-left: 5px;
-  }
-  40% {
-    margin-left: -9px;
-  }
-  60% {
-    margin-left: 9px;
-  }
-  80% {
-    margin-left: -5px;
-  }
-  100% {
-    margin-left: 0px;
-  }
 }
